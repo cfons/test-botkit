@@ -181,25 +181,25 @@ function usage_tip() {
 }
 
 
-// This is a Test - launch a notification schedule
-var request = require("request");
-var schedule = require('node-schedule');
-var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [1, new schedule.Range(2, 5)];
-rule.hour = new schedule.Range(9, 18, 1);
-rule.minute = new schedule.Range(0, 59, 20);
-
-var j = schedule.scheduleJob(rule, function(){
-  var options = { method: 'POST',
-    url: process.env.webhookURL,
-    headers:
-     {'Content-Type': 'application/json' },
-    body: { text: 'Beeh! <@U6SGT1VSR>, tu travailles?' },
-    json: true };
-
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
-  });
-});
+// Launch a notification schedule
+// var request = require("request");
+// var schedule = require('node-schedule');
+// var rule = new schedule.RecurrenceRule();
+// rule.dayOfWeek = [1, new schedule.Range(2, 5)];
+// rule.hour = new schedule.Range(9, 18, 1);
+// rule.minute = new schedule.Range(0, 59, 20);
+//
+// var j = schedule.scheduleJob(rule, function(){
+//   var options = { method: 'POST',
+//     url: process.env.webhookURL,
+//     headers:
+//      {'Content-Type': 'application/json' },
+//     body: { text: 'Beeh! <@U6SGT1VSR>, tu travailles?' },
+//     json: true };
+//
+//   request(options, function (error, response, body) {
+//     if (error) throw new Error(error);
+//
+//     console.log(body);
+//   });
+// });
